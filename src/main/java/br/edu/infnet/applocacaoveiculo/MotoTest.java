@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Moto;
+import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -14,35 +15,37 @@ public class MotoTest implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Moto m1 = new Moto();
-        m1.ano= LocalDate.of(2018,01,01);
-        m1.marca="Honda";
-        m1.modelo="Hornet";
-        m1.valor=47000.00f;
-        m1.velocidadeMaxima = 350;
-        m1.qntdCilindradas = 600;
-        m1.qntdMarchas=6;
-        System.out.println(m1);
+        m1.setAno(LocalDate.of(2018, 01, 01));
+        m1.setMarca("Honda");
+        m1.setModelo("Hornet");
+        m1.setValor(47000.00f);
+        m1.setVelocidadeMaxima(350);
+        m1.setQntdCilindradas(600);
+        m1.setQntdMarchas(6);
+
+        AppImpressao.relatorio("### INCLUSAO MOTO  HORNET ###", m1);
+
 
         Moto m2 = new Moto();
-        m2.ano= LocalDate.of(2019,01,01);
-        m2.marca="Yamaha";
-        m2.modelo="R3";
-        m2.valor=24000.00f;
-        m2.velocidadeMaxima = 299;
-        m2.qntdCilindradas = 300;
-        m2.qntdMarchas=6;
-        System.out.println(m2);
+        m2.setAno(LocalDate.of(2019, 01, 01));
+        m2.setMarca("Yamaha");
+        m2.setModelo("R3");
+        m2.setValor(24000.00f);
+        m2.setVelocidadeMaxima(299);
+        m2.setQntdCilindradas(300);
+        m2.setQntdMarchas(6);
+
+        AppImpressao.relatorio("### INCLUSAO MOTO R3 ###", m2);
 
         Moto m3 = new Moto();
-        m3.ano= LocalDate.of(2022,01,01);
-        m3.marca="Kawasaki";
-        m3.modelo="Ninja 400";
-        m3.valor=23000.00f;
-        m3.velocidadeMaxima = 350;
-        m3.qntdCilindradas = 400;
-        m3.qntdMarchas=6;
-        System.out.println(m3);
-        System.out.println();
+        m3.setAno(LocalDate.of(2022, 01, 01));
+        m3.setMarca("Kawasaki");
+        m3.setModelo("Ninja 400");
+        m3.setValor(23000.00f);
+        m3.setVelocidadeMaxima(350);
+        m3.setQntdCilindradas(400);
+        m3.setQntdMarchas(6);
+        AppImpressao.relatorio("### INCLUSAO MOTO 400 ###", m3);
 
     }
 }

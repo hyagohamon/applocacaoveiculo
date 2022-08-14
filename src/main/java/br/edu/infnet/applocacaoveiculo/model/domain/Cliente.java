@@ -1,6 +1,8 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
-public class Cliente {
+import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
+
+public class Cliente implements IPrinter {
     public String nome;
     public String cpf;
     public String telefone;
@@ -20,4 +22,12 @@ public class Cliente {
                 ", telefone:'" + telefone + '\'' +
                 '}';
     }
+
+    @Override
+    public void impressao() {
+        System.out.println("# Classe cliente");
+        System.out.println(this);
+
+    }
+
 }

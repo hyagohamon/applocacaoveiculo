@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Locacao;
+import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -17,20 +18,21 @@ public class LocacaoTest implements CommandLineRunner {
         l1.setData(LocalDate.now());
         l1.setDescricao("Locação de Carro");
         l1.setWeb(true);
-        System.out.println(l1);
 
         Locacao l2 = new Locacao();
         l2.setData(LocalDate.now());
         l2.setDescricao("Locação de Moto");
         l2.setWeb(false);
-        System.out.println(l2);
 
         Locacao l3 = new Locacao();
         l3.setData(LocalDate.now());
         l3.setDescricao("Locação de Barco");
         l3.setWeb(true);
-        System.out.println(l3);
-        System.out.println();
+
+        AppImpressao.relatorio("### INCLUSAO LOCAÇÃO CARRO", l1);
+        AppImpressao.relatorio("### INCLUSAO LOCAÇÃO MOTO", l2);
+        AppImpressao.relatorio("### INCLUSAO LOCAÇÃO BARCO", l3);
+
 
     }
 }

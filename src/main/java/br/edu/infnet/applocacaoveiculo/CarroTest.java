@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Carro;
+import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -16,38 +17,36 @@ public class CarroTest implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Carro c1 = new Carro();
-        c1.marca = "FORD";
-        c1.modelo = "KA";
-        c1.ano = LocalDate.of(2010,1,1);
-        c1.valor = 25000.00f;
-        c1.qntdPortas=2;
-        c1.qntdCavalos = 136;
-        c1.velocidadeMaxima = 200;
-
-        System.out.println(c1);
+        c1.setMarca("FORD");
+        c1.setModelo("KA");
+        c1.setAno(LocalDate.of(2010, 1, 1));
+        c1.setValor(25000.00f);
+        c1.setQntdPortas(2);
+        c1.setQntdCavalos(136);
+        c1.setVelocidadeMaxima(200);
+        AppImpressao.relatorio("### INCLUSAO FORD KA ###",c1);
 
         Carro c2 = new Carro();
-        c2.marca = "HYUNDAI";
-        c2.modelo = "HB20S";
-        c2.ano = LocalDate.of(2015,1,1);
-        c2.valor = 60000.00f;
-        c2.qntdPortas=4;
-        c2.qntdCavalos = 130;
-        c2.velocidadeMaxima = 280;
+        c2.setMarca("HYUNDAI");
+        c2.setModelo("HB20S");
+        c2.setAno(LocalDate.of(2015, 1, 1));
+        c2.setValor(60000.00f);
+        c2.setQntdPortas(4);
+        c2.setQntdCavalos(130);
+        c2.setVelocidadeMaxima(280);
+        AppImpressao.relatorio("### INCLUSAO DO CARRO HB20s ###",c2);
 
-        System.out.println(c2);
 
         Carro c3 = new Carro();
-        c3.marca = "FIAT";
-        c3.modelo = "ARGO";
-        c3.ano = LocalDate.of(2017,1,1);
-        c3.valor = 67900.90f;
-        c3.qntdPortas=4;
-        c3.qntdCavalos = 139;
-        c3.velocidadeMaxima = 300;
+        c3.setMarca("FIAT");
+        c3.setModelo("ARGO");
+        c3.setAno(LocalDate.of(2017, 1, 1));
+        c3.setValor(67900.90f);
+        c3.setQntdPortas(4);
+        c3.setQntdCavalos(139);
+        c3.setVelocidadeMaxima(300);
+        AppImpressao.relatorio("### INCLUSAO DO CARRO FIAT ARGO ###",c3);
 
-        System.out.println(c3);
-        System.out.println();
 
     }
 }

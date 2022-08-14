@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Barco;
+import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -14,35 +15,34 @@ public class BarcoTest implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Barco b1 = new Barco();
-        b1.marca = "MetalGlass";
-        b1.ano = LocalDate.of(2022, 01, 01);
-        b1.modelo = "M1";
-        b1.qtdDeck = 3;
-        b1.categoria = "Passeio";
-        b1.motor = true ;
-        b1.valor = 150000;
-        System.out.println(b1);
+        b1.setMarca("MetalGlass");
+        b1.setAno( LocalDate.of(2022, 01, 01));
+        b1.setModelo("M1");
+        b1.setQtdDeck(3);
+        b1.setCategoria("Passeio");
+        b1.setMotor(true);
+        b1.setValor(150000);
+        AppImpressao.relatorio("### INCLUSAO BARCO M1 ###", b1);
 
         Barco b2 = new Barco();
-        b2.marca = "Paranã";
-        b2.ano = LocalDate.of(2021, 01, 01);
-        b2.modelo = "P1";
-        b2.qtdDeck = 2;
-        b2.categoria = "Pesca";
-        b2.motor = true;
-        b2.valor = 50000;
-        System.out.println(b2);
+        b2.setMarca("Paranã");
+        b2.setAno(LocalDate.of(2021, 01, 01));
+        b2.setModelo("P1");
+        b2.setQtdDeck(2);
+        b2.setCategoria("Pesca");
+        b2.setMotor(true);
+        b2.setValor(50000);
+        AppImpressao.relatorio("### INCLUSAO BARCO P1 ###", b2);
 
         Barco b3 = new Barco();
-        b3.marca = "Levefort";
-        b3.ano = LocalDate.of(2020, 01, 01);
-        b3.modelo = "LF1";
-        b3.categoria = "Passeio";
-        b3.qtdDeck = 3;
-        b3.motor = false;
-        b3.valor = 160000;
-        System.out.println(b3);
-        System.out.println();
+        b3.setMarca("Levefort");
+        b3.setAno(LocalDate.of(2020, 01, 01));
+        b3.setModelo("LF1");
+        b3.setCategoria("Passeio");
+        b3.setQtdDeck(5);
+        b3.setMotor(false);
+        b3.setValor(1750000);
+        AppImpressao.relatorio("### INCLUSAO BARCO LF1 ###", b3);
 
     }
 }

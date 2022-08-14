@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Cliente;
+import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -16,10 +17,10 @@ public class ClienteTest implements CommandLineRunner {
         Cliente c2 = new Cliente("Italo Jose de Aquino", "01235345875", "99985256398");
         Cliente c3 = new Cliente("Kassia Hellen Silva", "12785445632", "99984453241");
 
-        System.out.println(c1);
-        System.out.println(c2);
-        System.out.println(c3);
-        System.out.println();
+        AppImpressao.relatorio("### INCLUSÃO CLIENTE MARIANA ###", c1);
+        AppImpressao.relatorio("### INCLUSÃO CLIENTE ITALO ###", c2);
+        AppImpressao.relatorio("### INCLUSÃO CLIENTE KASSIA ###", c3);
+
 
     }
 }

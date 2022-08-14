@@ -1,8 +1,10 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
+import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
+
 import java.time.LocalDate;
 
-public class Locacao {
+public class Locacao implements IPrinter {
     private String descricao;
     private LocalDate data;
     private boolean web;
@@ -35,4 +37,12 @@ public class Locacao {
     public void setWeb(boolean web) {
         this.web = web;
     }
+
+    @Override
+    public void impressao() {
+        System.out.println("# Classe locação");
+        System.out.println(this);
+    }
+
+
 }
