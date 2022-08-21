@@ -1,7 +1,6 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
 public class Barco extends Veiculo {
-
     private boolean motor;
     private int qtdDeck;
     private String categoria;
@@ -43,7 +42,7 @@ public class Barco extends Veiculo {
 
     @Override
     public void impressao() {
-        System.out.println("Classe Barco");
         System.out.println(this);
     }
+
 }

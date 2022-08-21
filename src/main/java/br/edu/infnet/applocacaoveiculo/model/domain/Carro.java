@@ -14,12 +14,11 @@ public class Carro extends Veiculo {
 
     @Override
     public double valorLocacao() {
-       return getValor() * 0.04;
+        return getValor() * 0.04;
     }
 
     @Override
     public void impressao() {
-        System.out.println("Classe Carro");
         System.out.println(this);
     }
 

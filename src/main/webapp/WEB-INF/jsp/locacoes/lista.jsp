@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
@@ -47,30 +49,28 @@
     <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
+            <th>Código</th>
             <th>Descrição</th>
             <th>Data</th>
             <th>Web</th>
+            <th>Ações</th>
 
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>Locação carro hb20</td>
-            <td>10/10/2020</td>
-            <td>sim</td>
+        <c:forEach var="locacao" items="${listagem}">
 
-        </tr>
-        <tr>
-            <td>Locação moto kawasaki</td>
-            <td>01/02/2021</td>
-            <td>nao</td>
-        </tr>
-        <tr>
-            <td>locação barco m1</td>
-            <td>14/08/2022</td>
-            <td>sim</td>
+            <tr>
+                <td>${locacao.codigo}</td>
+                <td>${locacao.descricao}</td>
+                <td>${locacao.data}</td>
+                <td>${locacao.web}</td>
+                <td><a href="/locacoes/${locacao.codigo}/excluir">Excluir</a></td>
 
-        </tr>
+
+            </tr>
+
+        </c:forEach>
         </tbody>
     </table>
 

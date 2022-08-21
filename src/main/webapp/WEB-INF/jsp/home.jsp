@@ -99,11 +99,9 @@
     </table>
 
 
-
-
     <h3>Classe: Carro</h3>
     <table class="table table-striped table-hover table-bordered">
-    <thead>
+        <thead>
         <tr>
             <th>Atributo</th>
             <th>Tipo</th>

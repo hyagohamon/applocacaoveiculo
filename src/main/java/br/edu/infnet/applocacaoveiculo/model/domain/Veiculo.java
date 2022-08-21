@@ -5,6 +5,8 @@ import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
 import java.time.LocalDate;
 
 public abstract class Veiculo implements IPrinter {
+
+    private Integer codigo;
     private String marca;
     private String modelo;
     private LocalDate ano;
@@ -16,10 +18,6 @@ public abstract class Veiculo implements IPrinter {
     }
 
     public abstract double valorLocacao();
-
-//    public double valorLocacao() {
-//        return valor * 0.02;
-//    }
 
 
     public String getMarca() {
@@ -52,6 +50,14 @@ public abstract class Veiculo implements IPrinter {
 
     public void setValor(float valor) {
         this.valor = valor;
+    }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
     }
 
 }

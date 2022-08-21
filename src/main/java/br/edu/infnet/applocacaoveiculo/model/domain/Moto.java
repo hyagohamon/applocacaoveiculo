@@ -22,7 +22,6 @@ public class Moto extends Veiculo {
 
     @Override
     public void impressao() {
-        System.out.println("Classe Moto");
         System.out.println(this);
     }
 

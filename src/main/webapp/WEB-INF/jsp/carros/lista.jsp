@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
@@ -47,39 +49,33 @@
     <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
+            <th>Código</th>
             <th>Marca</th>
             <th>Modelo</th>
             <th>Valor</th>
             <th>Portas</th>
             <th>Cavalos</th>
             <th>Velocidade máxima</th>
+            <th>Ações</th>
+
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>Hyundai</td>
-            <td>HB20s</td>
-            <td>R$ 65.000</td>
-            <td>4</td>
-            <td>135</td>
-            <td>300</td>
-        </tr>
-        <tr>
-            <td>Toyota</td>
-            <td>Corola</td>
-            <td>R$ 99.000</td>
-            <td>4</td>
-            <td>235</td>
-            <td>360</td>
-        </tr>
-        <tr>
-            <td>Honda</td>
-            <td>Civid</td>
-            <td>R$ 120.000</td>
-            <td>4</td>
-            <td>250</td>
-            <td>325</td>
-        </tr>
+        <c:forEach var="carro" items="${listagem}">
+            <tr>
+                <td>${carro.codigo}</td>
+                <td>${carro.marca}</td>
+                <td>${carro.modelo}</td>
+                <td>${carro.valor}</td>
+                <td>${carro.qntdPortas}</td>
+                <td>${carro.qntdCavalos}</td>
+                <td>${carro.velocidadeMaxima}</td>
+                <td><a href="/carros/${carro.codigo}/excluir">Excluir</a></td>
+
+            </tr>
+        </c:forEach>
+
+
         </tbody>
     </table>
 

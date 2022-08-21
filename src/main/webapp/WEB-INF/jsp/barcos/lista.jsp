@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
@@ -47,40 +48,30 @@
     <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
+            <th>Código</th>
             <th>Marca</th>
             <th>Modelo</th>
             <th>Ano</th>
             <th>Valor</th>
             <th>Deck</th>
             <th>Categoria</th>
+            <th>Ações</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>Levefort</td>
-            <td>Lvf</td>
-            <td> 2022</td>
-            <td>R$ 150.000</td>
-            <td>5</td>
-            <td>Pesca</td>
-        </tr>
-        <tr>
-            <td>Pantanaltica</td>
-            <td>Pan</td>
-            <td> 2021</td>
-            <td>R$ 250.000</td>
-            <td>2</td>
-            <td>Passeio</td>
-        </tr>
-        <tr>
-            <td>Martinelli</td>
-            <td>mt1520</td>
-            <td> 2022</td>
-            <td>R$ 125.000</td>
-            <td>1</td>
-            <td>Militar</td>
-        </tr>
 
+        <c:forEach var="barco" items="${listagem}">
+            <tr>
+                <td>${barco.codigo}</td>
+                <td>${barco.marca}</td>
+                <td>${barco.modelo}</td>
+                <td> ${barco.ano}</td>
+                <td>${barco.valor}</td>
+                <td>${barco.qtdDeck}</td>
+                <td>${barco.categoria}</td>
+                <td><a href="/barcos/${barco.codigo}/excluir">Excluir</a></td>
+            </tr>
+        </c:forEach>
 
         </tbody>
     </table>

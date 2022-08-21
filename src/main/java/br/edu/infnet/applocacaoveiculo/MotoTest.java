@@ -1,7 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
+import br.edu.infnet.applocacaoveiculo.controller.MotoController;
 import br.edu.infnet.applocacaoveiculo.model.domain.Moto;
-import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -21,9 +21,7 @@ public class MotoTest implements CommandLineRunner {
         m1.setValor(47000.00f);
         m1.setVelocidadeMaxima(350);
         m1.setQntdCilindradas(600);
-        m1.setQntdMarchas(6);
-
-        AppImpressao.relatorio("### INCLUSAO MOTO  HORNET ###", m1);
+        m1.setQntdMarchas(5);
 
 
         Moto m2 = new Moto();
@@ -35,7 +33,6 @@ public class MotoTest implements CommandLineRunner {
         m2.setQntdCilindradas(300);
         m2.setQntdMarchas(6);
 
-        AppImpressao.relatorio("### INCLUSAO MOTO R3 ###", m2);
 
         Moto m3 = new Moto();
         m3.setAno(LocalDate.of(2022, 01, 01));
@@ -45,7 +42,10 @@ public class MotoTest implements CommandLineRunner {
         m3.setVelocidadeMaxima(350);
         m3.setQntdCilindradas(400);
         m3.setQntdMarchas(6);
-        AppImpressao.relatorio("### INCLUSAO MOTO 400 ###", m3);
+
+        MotoController.incluir(m1);
+        MotoController.incluir(m2);
+        MotoController.incluir(m3);
 
     }
 }

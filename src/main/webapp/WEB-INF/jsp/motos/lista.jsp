@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
@@ -46,40 +48,33 @@
     <h3>Classe: Moto</h3>
     <table class="table table-striped table-hover table-bordered">
         <thead>
+
         <tr>
+            <th>Código</th>
             <th>Marca</th>
             <th>Modelo</th>
             <th>Valor</th>
             <th>Cilindradas</th>
             <th>Marchas</th>
             <th>Velocidade máxima</th>
+            <th>Ações</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>Honda</td>
-            <td>Biz</td>
-            <td>R$ 11.000</td>
-            <td>125</td>
-            <td>4</td>
-            <td>120</td>
-        </tr>
-        <tr>
-            <td>Honda</td>
-            <td>Titan</td>
-            <td>R$ 15.000</td>
-            <td>5</td>
-            <td>160</td>
-            <td>140</td>
-        </tr>
-        <tr>
-            <td>Kawasaki</td>
-            <td>Ninja</td>
-            <td>R$ 24.000</td>
-            <td>6</td>
-            <td>400</td>
-            <td>300</td>
-        </tr>
+        <c:forEach var="moto" items="${listagem}">
+            <tr>
+                <td>${moto.codigo}</td>
+                <td>${moto.marca}</td>
+                <td>${moto.modelo}</td>
+                <td>${moto.valor}</td>
+                <td>${moto.qntdCilindradas}</td>
+                <td>${moto.qntdMarchas}</td>
+                <td>${moto.velocidadeMaxima}</td>
+                <td><a href="/motos/${moto.codigo}/excluir">Excluir</a></td>
+
+            </tr>
+        </c:forEach>
+
         </tbody>
     </table>
 

@@ -1,7 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
+import br.edu.infnet.applocacaoveiculo.controller.CarroController;
 import br.edu.infnet.applocacaoveiculo.model.domain.Carro;
-import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -24,7 +24,7 @@ public class CarroTest implements CommandLineRunner {
         c1.setQntdPortas(2);
         c1.setQntdCavalos(136);
         c1.setVelocidadeMaxima(200);
-        AppImpressao.relatorio("### INCLUSAO FORD KA ###",c1);
+        CarroController.incluir(c1);
 
         Carro c2 = new Carro();
         c2.setMarca("HYUNDAI");
@@ -34,7 +34,7 @@ public class CarroTest implements CommandLineRunner {
         c2.setQntdPortas(4);
         c2.setQntdCavalos(130);
         c2.setVelocidadeMaxima(280);
-        AppImpressao.relatorio("### INCLUSAO DO CARRO HB20s ###",c2);
+        CarroController.incluir(c2);
 
 
         Carro c3 = new Carro();
@@ -45,7 +45,7 @@ public class CarroTest implements CommandLineRunner {
         c3.setQntdPortas(4);
         c3.setQntdCavalos(139);
         c3.setVelocidadeMaxima(300);
-        AppImpressao.relatorio("### INCLUSAO DO CARRO FIAT ARGO ###",c3);
+        CarroController.incluir(c3);
 
 
     }

@@ -2,16 +2,35 @@ package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Set;
 
 public class Locacao implements IPrinter {
+
+    private Integer codigo;
     private String descricao;
-    private LocalDate data;
+    private LocalDateTime data;
     private boolean web;
+
+    private Set<Veiculo> veiculos;
+    private Cliente cliente;
+
+
+    public Locacao(Cliente cliente) {
+        this.cliente = cliente;
+        this.data = LocalDateTime.now();
+    }
+
 
     @Override
     public String toString() {
-        return "Locacao{" + "descricao='" + descricao + '\'' + ", data=" + data + ", web=" + web + '}';
+        return "Locacao{" +
+                "descricao='" + descricao + '\'' +
+                ", data=" + data +
+                ", web=" + web +
+                ", cliente=" + cliente +
+                ", veiculos=" + veiculos.size() +
+                '}';
     }
 
     public String getDescricao() {
@@ -22,13 +41,6 @@ public class Locacao implements IPrinter {
         this.descricao = descricao;
     }
 
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
 
     public boolean isWeb() {
         return web;
@@ -38,11 +50,33 @@ public class Locacao implements IPrinter {
         this.web = web;
     }
 
-    @Override
-    public void impressao() {
-        System.out.println("# Classe locação");
-        System.out.println(this);
+    public Set<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(Set<Veiculo> veiculos) {
+        this.veiculos = veiculos;
     }
 
 
+    @Override
+    public void impressao() {
+        System.out.println(this);
+    }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
+    }
 }
