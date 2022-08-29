@@ -1,5 +1,7 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
+import br.edu.infnet.applocacaoveiculo.model.exceptions.QntdDeckInvalidaException;
+
 public class Barco extends Veiculo {
     private boolean motor;
     private int qtdDeck;
@@ -11,8 +13,11 @@ public class Barco extends Veiculo {
         return "Barco {" + "motor:" + motor + ", qntdDeck:'" + qtdDeck + ", categoria:" + categoria + "} " + super.toString();
     }
 
-    public double valorLocacao() {
-        return getValor() * 0.03;
+    public double valorLocacao() throws QntdDeckInvalidaException {
+        if(qtdDeck>=5){
+            throw new QntdDeckInvalidaException("A quantidade de decks nao pode ser igual ou superior a 5");
+        }
+        return getValor() * 0.02;
     }
 
 

@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
+import br.edu.infnet.applocacaoveiculo.model.exceptions.CPFInvalidoException;
 
 public class Cliente implements IPrinter {
 
@@ -10,7 +11,13 @@ public class Cliente implements IPrinter {
     private String telefone;
 
 
-    public Cliente(String nome, String cpf, String telefone) {
+    public Cliente(String nome, String cpf, String telefone) throws CPFInvalidoException {
+        if (cpf == null) {
+            throw new CPFInvalidoException("O cpf do cliente não pode ser nulo");
+        }
+        if (cpf.isEmpty()) {
+            throw new CPFInvalidoException("O cpf do cliente não pode ser vazio");
+        }
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
@@ -18,11 +25,7 @@ public class Cliente implements IPrinter {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", telefone='" + telefone + '\'' +
-                '}';
+        return "Cliente{" + "nome='" + nome + '\'' + ", cpf='" + cpf + '\'' + ", telefone='" + telefone + '\'' + '}';
     }
 
     @Override

@@ -1,5 +1,8 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
+import br.edu.infnet.applocacaoveiculo.model.exceptions.CilindradaInvalidaException;
+import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
+
 public class Moto extends Veiculo {
 
     private int qntdCilindradas;
@@ -16,7 +19,10 @@ public class Moto extends Veiculo {
     }
 
     @Override
-    public double valorLocacao() {
+    public double valorLocacao() throws CilindradaInvalidaException {
+        if(qntdCilindradas>1500){
+            throw new CilindradaInvalidaException(" a quantidade de cilindradas nao pode ser maior que 1500");
+        }
         return getValor() * 0.02 + (qntdCilindradas / 2);
     }
 

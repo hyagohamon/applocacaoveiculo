@@ -53,6 +53,8 @@
             <th>Descrição</th>
             <th>Data</th>
             <th>Web</th>
+            <th>Cliente</th>
+            <th>Veiculo</th>
             <th>Ações</th>
 
         </tr>
@@ -65,6 +67,8 @@
                 <td>${locacao.descricao}</td>
                 <td>${locacao.data}</td>
                 <td>${locacao.web}</td>
+                <td>${locacao.cliente.nome}</td>
+                <td>${locacao.veiculos.size()}</td>
                 <td><a href="/locacoes/${locacao.codigo}/excluir">Excluir</a></td>
 
 

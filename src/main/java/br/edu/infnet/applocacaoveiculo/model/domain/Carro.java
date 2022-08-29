@@ -1,5 +1,7 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
+import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
+
 public class Carro extends Veiculo {
 
     private int qntdPortas;
@@ -13,7 +15,10 @@ public class Carro extends Veiculo {
     }
 
     @Override
-    public double valorLocacao() {
+    public double valorLocacao() throws ValorInvalidoException {
+        if (getValor() <= 0) {
+            throw new ValorInvalidoException("Valor do veiculo nao pode ser menor ou igual a zero");
+        }
         return getValor() * 0.04;
     }
 

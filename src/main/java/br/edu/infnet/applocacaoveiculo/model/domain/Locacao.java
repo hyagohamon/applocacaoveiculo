@@ -1,22 +1,36 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
+import br.edu.infnet.applocacaoveiculo.model.exceptions.ClienteNuloException;
+import br.edu.infnet.applocacaoveiculo.model.exceptions.LocacaoSemVeiculoException;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
 public class Locacao implements IPrinter {
 
+    private final Cliente cliente;
+    private final Set<Veiculo> veiculos;
     private Integer codigo;
     private String descricao;
     private LocalDateTime data;
     private boolean web;
 
-    private Set<Veiculo> veiculos;
-    private Cliente cliente;
+
+    public Locacao(Cliente cliente, Set<Veiculo> veiculos) throws ClienteNuloException, LocacaoSemVeiculoException {
+        if (cliente == null) {
+            throw new ClienteNuloException("O cliente não pode ser nulo");
+        }
+
+        if (veiculos == null) {
+            throw new LocacaoSemVeiculoException("A lista de veiculos nao pode ser nula");
+        }
+        if (veiculos.size() < 1) {
+            throw new LocacaoSemVeiculoException("A locação deve conter pelo menos um veiculo");
+        }
 
 
-    public Locacao(Cliente cliente) {
+        this.veiculos = veiculos;
         this.cliente = cliente;
         this.data = LocalDateTime.now();
     }
@@ -24,13 +38,15 @@ public class Locacao implements IPrinter {
 
     @Override
     public String toString() {
-        return "Locacao{" +
-                "descricao='" + descricao + '\'' +
-                ", data=" + data +
-                ", web=" + web +
-                ", cliente=" + cliente +
-                ", veiculos=" + veiculos.size() +
-                '}';
+        return "Locacao{" + "descricao='" + descricao + '\'' + ", data=" + data + ", web=" + web + ", cliente=" + cliente + ", veiculos=" + veiculos.size() + '}';
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public Set<Veiculo> getVeiculos() {
+        return veiculos;
     }
 
     public String getDescricao() {
@@ -48,14 +64,6 @@ public class Locacao implements IPrinter {
 
     public void setWeb(boolean web) {
         this.web = web;
-    }
-
-    public Set<Veiculo> getVeiculos() {
-        return veiculos;
-    }
-
-    public void setVeiculos(Set<Veiculo> veiculos) {
-        this.veiculos = veiculos;
     }
 
 

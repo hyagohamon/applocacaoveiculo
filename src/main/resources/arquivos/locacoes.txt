@@ -1,0 +1,3 @@
+locacao 1 via arquivo.txt;true;Paloma Oliveira Silva;05027864349;99985453298
+locacao 2 via arquivo.txt;true;Maria Clara;05027864344;99985853798
+locacao 3 via arquivo.txt;false;Hyago Hamon Sousa de Aquino;05027864345;99985453200

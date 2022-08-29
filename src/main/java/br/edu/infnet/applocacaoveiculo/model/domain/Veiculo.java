@@ -1,6 +1,9 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
+import br.edu.infnet.applocacaoveiculo.model.exceptions.CilindradaInvalidaException;
+import br.edu.infnet.applocacaoveiculo.model.exceptions.QntdDeckInvalidaException;
+import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
 
 import java.time.LocalDate;
 
@@ -14,10 +17,10 @@ public abstract class Veiculo implements IPrinter {
 
     @Override
     public String toString() {
-        return "Veiculo{" + "marca:" + marca + ", modelo:'" + modelo + ", ano:" + ano.getYear() + ", valor:" + valor + ", valor locação :" + valorLocacao() + '}';
+        return "Veiculo{" + "marca:" + marca + ", modelo:'" + modelo + ", ano:" + ano.getYear() + ", valor:" + valor  + '}';
     }
 
-    public abstract double valorLocacao();
+    public abstract double valorLocacao() throws ValorInvalidoException, CilindradaInvalidaException, QntdDeckInvalidaException;
 
 
     public String getMarca() {
