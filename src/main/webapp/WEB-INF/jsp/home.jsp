@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
@@ -7,40 +8,10 @@
     <title>AppLocação</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">AppLocação Veículos</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/barcos/lista">Barcos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/carros/lista">Carros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/motos/lista">Motos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/clientes/lista">Clientes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/locacoes/lista">Locações</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Search">
-                <button class="btn btn-primary" type="button">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
+<c:import url="menu.jsp"></c:import>
 <div class="container mt-3">
 
-    <p>Projeto de Locação de Veiculos</p>
+    <p>Projeto de Locação de Veículos</p>
 
     <h3>Classe: Cliente</h3>
     <table class="table table-striped table-hover table-bordered">
@@ -81,7 +52,7 @@
         </thead>
         <tbody>
         <tr>
-            <td>descricao</td>
+            <td>Descrição</td>
             <td>String</td>
             <td>Descrição da locação</td>
         </tr>
@@ -93,7 +64,7 @@
         <tr>
             <td>web</td>
             <td>boolean</td>
-            <td>indica se a locação foi realizada pela web ou não</td>
+            <td>indica se a locação foi realizada pela WEB ou não</td>
         </tr>
         </tbody>
     </table>
