@@ -9,6 +9,7 @@
     <title>AppLocação</title>
 </head>
 <body>
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">AppLocação Veículos</a>
@@ -40,6 +41,10 @@
         </div>
     </div>
 </nav>
+=======
+<c:import url="../menu.jsp"></c:import>
+
+>>>>>>> 3b9eca5 (tela de "login", cadastro e exclusÃ£o de usuÃ¡rios implementados.)
 <div class="container mt-3">
 
     <p>Projeto de Locação de Veiculos</p>
