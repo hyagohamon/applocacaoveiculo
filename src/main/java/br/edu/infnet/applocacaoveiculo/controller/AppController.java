@@ -1,7 +1,10 @@
 package br.edu.infnet.applocacaoveiculo.controller;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Usuario;
+import br.edu.infnet.applocacaoveiculo.model.domain.app.Projeto;
+import br.edu.infnet.applocacaoveiculo.model.service.AppService;
 import br.edu.infnet.applocacaoveiculo.model.service.UsuarioService;
+import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +22,13 @@ public class AppController {
     @Autowired
     UsuarioService usuarioService;
 
+    @Autowired
+    AppService appService;
+
+
     @GetMapping(value = "/")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("projeto",appService.obterProjeto());
         return "home";
     }
 
@@ -37,7 +45,8 @@ public class AppController {
         if (usuario != null) {
 
             model.addAttribute("loggedUser", usuario.getNome());
-            return home();
+            return "redirect:/";
+
         } else {
             return login();
         }
