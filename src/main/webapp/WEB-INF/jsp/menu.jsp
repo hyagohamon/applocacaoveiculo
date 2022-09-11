@@ -43,7 +43,7 @@
         </c:if>
 
         <c:if test="${not empty loggedUser}">
-            <a href="/logout" class="btn btn-outline-danger me-2">Logout ${loggedUser}</a>
+            <a href="/logout" class="btn-block btn-outline-danger me-2">Logout, ${loggedUser}</a>
         </c:if>
 
     </form>
