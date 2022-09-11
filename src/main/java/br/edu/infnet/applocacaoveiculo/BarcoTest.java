@@ -30,7 +30,7 @@ public class BarcoTest implements CommandLineRunner {
             b1.setCategoria("Passeio");
             b1.setMotor(true);
             b1.setValor(150000);
-            System.out.println("Calculo loca√ß√£o:" + b1.valorLocacao());
+            System.out.println("Calculo locaÁ„o:" + b1.valorLocacao());
             BarcoController.incluir(b1);
 
         } catch (QntdDeckInvalidaException e) {
@@ -40,14 +40,14 @@ public class BarcoTest implements CommandLineRunner {
 
         try {
             Barco b2 = new Barco();
-            b2.setMarca("Paran√£");
+            b2.setMarca("Paran„");
             b2.setAno(LocalDate.of(2021, 01, 01));
             b2.setModelo("P1");
             b2.setQtdDeck(2);
             b2.setCategoria("Pesca");
             b2.setMotor(true);
             b2.setValor(150000);
-            System.out.println("Calculo loca√ß√£o:" + b2.valorLocacao());
+            System.out.println("Calculo locaÁ„o:" + b2.valorLocacao());
             BarcoController.incluir(b2);
 
         } catch (QntdDeckInvalidaException e) {
@@ -64,7 +64,7 @@ public class BarcoTest implements CommandLineRunner {
             b3.setQtdDeck(4);
             b3.setMotor(false);
             b3.setValor(1750000);
-            System.out.println("Calculo loca√ß√£o:" + b3.valorLocacao());
+            System.out.println("Calculo locaÁ„o:" + b3.valorLocacao());
             BarcoController.incluir(b3);
 
         } catch (QntdDeckInvalidaException e) {
@@ -82,7 +82,7 @@ public class BarcoTest implements CommandLineRunner {
             b4.setQtdDeck(20);
             b4.setMotor(false);
             b4.setValor(190000);
-            System.out.println("Calculo loca√ß√£o:" + b4.valorLocacao());
+            System.out.println("Calculo locaÁ„o:" + b4.valorLocacao());
             BarcoController.incluir(b4);
 
         } catch (QntdDeckInvalidaException e) {
@@ -110,7 +110,7 @@ public class BarcoTest implements CommandLineRunner {
                         b4.setQtdDeck(Integer.parseInt(campos[4]));
                         b4.setMotor(Boolean.parseBoolean(campos[5]));
                         b4.setValor(Float.parseFloat(campos[6]));
-                        System.out.println("Calculo loca√ß√£o:" + b4.valorLocacao());
+                        System.out.println("Calculo locaÁ„o:" + b4.valorLocacao());
                         BarcoController.incluir(b4);
 
                     } catch (QntdDeckInvalidaException e) {

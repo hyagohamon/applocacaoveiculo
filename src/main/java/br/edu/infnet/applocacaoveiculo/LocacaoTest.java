@@ -59,7 +59,7 @@ public class LocacaoTest implements CommandLineRunner {
             listaLocacao1.add(m1);
             Cliente c1 = new Cliente("Mariana Cutrim Alencar", "05027864349", "99985453299");
             Locacao l1 = new Locacao(c1, listaLocacao1);
-            l1.setDescricao("LocaÃ§Ã£o de Carro");
+            l1.setDescricao("Locação de Carro");
             l1.setWeb(true);
             LocacaoController.incluir(l1);
         } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {
@@ -73,7 +73,7 @@ public class LocacaoTest implements CommandLineRunner {
             listaLocacao2.add(b1);
             Cliente c2 = new Cliente("Italo Jose de Aquino", "01235345875", "99985256398");
             Locacao l2 = new Locacao(c2, listaLocacao2);
-            l2.setDescricao("LocaÃ§Ã£o de Moto");
+            l2.setDescricao("Locação de Moto");
             l2.setWeb(false);
             LocacaoController.incluir(l2);
         } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {
@@ -86,7 +86,7 @@ public class LocacaoTest implements CommandLineRunner {
             listaLocacao3.add(b1);
             Cliente c3 = new Cliente("Kassia Hellen Silva", "12785445632", "99984453241");
             Locacao l3 = new Locacao(c3, listaLocacao3);
-            l3.setDescricao("LocaÃ§Ã£o de Barco");
+            l3.setDescricao("Locação de Barco");
             l3.setWeb(true);
             LocacaoController.incluir(l3);
         } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {
@@ -97,7 +97,7 @@ public class LocacaoTest implements CommandLineRunner {
             Set<Veiculo> listaLocacao4 = new HashSet<Veiculo>();
             Cliente c4 = new Cliente("Hugo Pedro", "9878855", "25365214558");
             Locacao l4 = new Locacao(c4, listaLocacao4);
-            l4.setDescricao("LocaÃ§Ã£o de Barco");
+            l4.setDescricao("Locação de Barco");
             l4.setWeb(true);
             LocacaoController.incluir(l4);
         } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {
@@ -109,7 +109,7 @@ public class LocacaoTest implements CommandLineRunner {
 //            Set<Veiculo> listaLocacao5 = new HashSet<Veiculo>();
 //            Cliente c5 = new Cliente("Paloma Oliveira", "2525242423", "0202030501");
 //            Locacao l5 = new Locacao(null, listaLocacao5);
-//            l5.setDescricao("LocaÃ§Ã£o de Barco");
+//            l5.setDescricao("Locação de Barco");
 //            l5.setWeb(true);
 //            LocacaoController.incluir(l5);
 //        } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {
@@ -120,7 +120,7 @@ public class LocacaoTest implements CommandLineRunner {
 //            Set<Veiculo> listaLocacao6 = null;
 //            Cliente c6 = new Cliente("Jessica Oliveira", "1810181", "3636353535");
 //            Locacao l6 = new Locacao(c6, listaLocacao6);
-//            l6.setDescricao("LocaÃ§Ã£o de Barco");
+//            l6.setDescricao("Locação de Barco");
 //            l6.setWeb(true);
 //            LocacaoController.incluir(l6);
 //        } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {

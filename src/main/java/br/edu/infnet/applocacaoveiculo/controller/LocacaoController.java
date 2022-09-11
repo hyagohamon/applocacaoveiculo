@@ -20,7 +20,7 @@ public class LocacaoController {
     public static void incluir(Locacao locacao) {
         locacao.setCodigo(id++);
         locacoes.put(locacao.getCodigo(), locacao);
-        AppImpressao.relatorio("LocaÃ§Ã£o " + locacao.getDescricao() + " cadastrado com sucesso", locacao);
+        AppImpressao.relatorio("Locação " + locacao.getDescricao() + " cadastrado com sucesso", locacao);
 
     }
 

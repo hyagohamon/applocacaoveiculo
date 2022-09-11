@@ -17,7 +17,7 @@ public class Usuario implements IPrinter {
 
     @Override
     public String toString() {
-        return "Cliente{" + "nome='" + nome + '\'' + ", senha='" + senha + '\'' + ", email='" + email + '\'' + '}';
+        return "Usuário{" + "nome='" + nome + '\'' + ", senha='" + senha + '\'' + ", email='" + email + '\'' + '}';
     }
 
     @Override

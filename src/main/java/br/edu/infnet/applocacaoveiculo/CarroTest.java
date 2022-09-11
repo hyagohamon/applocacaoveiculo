@@ -32,7 +32,7 @@ public class CarroTest implements CommandLineRunner {
             c1.setQntdPortas(2);
             c1.setQntdCavalos(136);
             c1.setVelocidadeMaxima(200);
-            System.out.println("Calculo locaÃ§Ã£o:" + c1.valorLocacao());
+            System.out.println("Calculo locação:" + c1.valorLocacao());
             CarroController.incluir(c1);
 
         } catch (ValorInvalidoException e) {
@@ -50,7 +50,7 @@ public class CarroTest implements CommandLineRunner {
             c2.setQntdPortas(4);
             c2.setQntdCavalos(130);
             c2.setVelocidadeMaxima(280);
-            System.out.println("Calculo locaÃ§Ã£o:" + c2.valorLocacao());
+            System.out.println("Calculo locação:" + c2.valorLocacao());
             CarroController.incluir(c2);
 
         } catch (ValorInvalidoException e) {
@@ -67,7 +67,7 @@ public class CarroTest implements CommandLineRunner {
             c3.setQntdPortas(4);
             c3.setQntdCavalos(139);
             c3.setVelocidadeMaxima(300);
-            System.out.println("Calculo locaÃ§Ã£o:" + c3.valorLocacao());
+            System.out.println("Calculo locação:" + c3.valorLocacao());
             CarroController.incluir(c3);
 
         } catch (ValorInvalidoException e) {
@@ -84,7 +84,7 @@ public class CarroTest implements CommandLineRunner {
             c4.setQntdPortas(4);
             c4.setQntdCavalos(200);
             c4.setVelocidadeMaxima(325);
-            System.out.println("Calculo locaÃ§Ã£o:" + c4.valorLocacao());
+            System.out.println("Calculo locação:" + c4.valorLocacao());
             CarroController.incluir(c4);
 
         } catch (ValorInvalidoException e) {
@@ -112,7 +112,7 @@ public class CarroTest implements CommandLineRunner {
                         c4.setQntdPortas(Integer.parseInt(campos[4]));
                         c4.setQntdCavalos(Integer.parseInt(campos[5]));
                         c4.setVelocidadeMaxima(Integer.parseInt(campos[6]));
-                        System.out.println("Calculo locaÃ§Ã£o:" + c4.valorLocacao());
+                        System.out.println("Calculo locação:" + c4.valorLocacao());
                         CarroController.incluir(c4);
 
                     } catch (ValorInvalidoException e) {

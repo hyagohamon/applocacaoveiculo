@@ -1,0 +1,32 @@
+P;AppLoc;Locação de veículos
+C;Usuário
+A;nome;String;nome do usuário
+A;e-mail;String;e-mail do usuário
+A;senha;String;senha do usuário
+C;Cliente
+A;nome;String;nome do cliente
+A;cpf;String;cpf do cliente
+A;telefone;String;telefone do cliente
+C;Carro
+A;qntdPortas;int;quantidade de portas do carro
+A;qntdCavalos;int;quantidade de cavalos do carro
+A;velocidadeMaxima;int;velocidade máxima do carro
+C;Moto
+A;qntdCilindradas;int;cilindradas da moto
+A;velocidadeMaxima;int;velocidade maxíma da moto
+A;qntdMarchas;int;quantidade de marchas da moto
+C;Barco
+A;motor;boolean;se o barco é a motor ou não
+A;qtdDeck;int;quantidade de decks do barco
+A;categoria;String;categoria do barco
+C;Locação
+A;cliente;Cliente;nome do cliente que realizou a locação
+A;veiculos;Veiculo; veículo(s) locados
+A;descrição;double;descrição da locação
+A;data;double;momento em que a locação foi feita
+A;web;double;se a locação foi via web ou não
+C;Veículo
+A;marca;String;nome do carro
+A;modelo;String;modelo do carro
+A;ano;LocalDate;ano do carro
+A;valor;double;valor do carro
