@@ -8,10 +8,10 @@ public class Cliente implements IPrinter {
     private Integer codigo;
     private String nome;
     private String cpf;
-    private String telefone;
+    private String email;
 
 
-    public Cliente(String nome, String cpf, String telefone) throws CPFInvalidoException {
+    public Cliente(String nome, String cpf, String email) throws CPFInvalidoException {
         if (cpf == null) {
             throw new CPFInvalidoException("O cpf do cliente não pode ser nulo");
         }
@@ -20,12 +20,12 @@ public class Cliente implements IPrinter {
         }
         this.nome = nome;
         this.cpf = cpf;
-        this.telefone = telefone;
+        this.email = email;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "nome='" + nome + '\'' + ", cpf='" + cpf + '\'' + ", telefone='" + telefone + '\'' + '}';
+        return "Cliente{" + "nome='" + nome + '\'' + ", cpf='" + cpf + '\'' + ", e-mail='" + email + '\'' + '}';
     }
 
     @Override
@@ -58,11 +58,11 @@ public class Cliente implements IPrinter {
         this.cpf = cpf;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

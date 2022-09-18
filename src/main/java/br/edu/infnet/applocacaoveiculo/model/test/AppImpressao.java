@@ -28,7 +28,7 @@ public class AppImpressao {
 
         Moto m1 = new Moto();
         m1.setCodigo(1);
-        m1.setAno(LocalDate.of(2018, 01, 01));
+        m1.setAno("2018");
         m1.setMarca("Honda");
         m1.setModelo("Hornet");
         m1.setValor(47000.00f);
@@ -40,7 +40,7 @@ public class AppImpressao {
         ca1.setCodigo(1);
         ca1.setMarca("FORD");
         ca1.setModelo("KA");
-        ca1.setAno(LocalDate.of(2010, 1, 1));
+        ca1.setAno("2010");
         ca1.setValor(25000.00f);
         ca1.setQntdPortas(2);
         ca1.setQntdCavalos(136);
@@ -49,7 +49,7 @@ public class AppImpressao {
         Barco b1 = new Barco();
         b1.setCodigo(1);
         b1.setMarca("MetalGlass");
-        b1.setAno(LocalDate.of(2022, 01, 01));
+        b1.setAno("2022");
         b1.setModelo("M1");
         b1.setQtdDeck(3);
         b1.setCategoria("Passeio");

@@ -13,17 +13,18 @@
 
 <div class="container mt-3">
 
-    <p>Projeto de Locação de Veiculos</p>
 
+    <h3>Clientes</h3>
 
-    <h3>Classe: Cliente</h3>
+    <a href="/clientes" class="btn btn-success mb-2 ">Novo</a>
+
     <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
             <th>Código</th>
             <th>Nome</th>
             <th>CPF</th>
-            <th>Telefone</th>
+            <th>E-mail</th>
             <th>Ações</th>
 
         </tr>
@@ -35,8 +36,10 @@
                 <td>${cliente.codigo}</td>
                 <td>${cliente.nome}</td>
                 <td>${cliente.cpf}</td>
-                <td>${cliente.telefone}</td>
-                <td><a href="/clientes/${cliente.codigo}/excluir">Excluir</a></td>
+                <td>${cliente.email}</td>
+                <td><a href="/clientes/${cliente.codigo}/excluir"  class="btn btn-danger">Excluir</a></td>
+
+
 
             </tr>
         </c:forEach>

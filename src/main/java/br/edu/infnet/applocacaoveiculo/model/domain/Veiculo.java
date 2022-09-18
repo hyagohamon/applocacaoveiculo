@@ -12,12 +12,12 @@ public abstract class Veiculo implements IPrinter {
     private Integer codigo;
     private String marca;
     private String modelo;
-    private LocalDate ano;
+    private String ano;
     private float valor;
 
     @Override
     public String toString() {
-        return "Veiculo{" + "marca:" + marca + ", modelo:'" + modelo + ", ano:" + ano.getYear() + ", valor:" + valor  + '}';
+        return "Veiculo{" + "marca:" + marca + ", modelo:'" + modelo + ", ano:" + ano + ", valor:" + valor  + '}';
     }
 
     public abstract double valorLocacao() throws ValorInvalidoException, CilindradaInvalidaException, QntdDeckInvalidaException;
@@ -39,11 +39,11 @@ public abstract class Veiculo implements IPrinter {
         this.modelo = modelo;
     }
 
-    public LocalDate getAno() {
+    public String getAno() {
         return ano;
     }
 
-    public void setAno(LocalDate ano) {
+    public void setAno(String ano) {
         this.ano = ano;
     }
 

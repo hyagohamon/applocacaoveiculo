@@ -10,20 +10,22 @@
 <body>
 <c:import url="../menu.jsp"></c:import>
 <div class="container mt-3">
-    <h3>Cadastro de usuário</h3>
-    <form method="post" action="/usuarios/incluir">
+    <h2>Cadastro de clientes</h2>
+    <form method="post" action="clientes/incluir">
 
         <div class="mb-3 mt-3">
             <label for="nome" id="nome" class="form-label">Nome:</label>
-            <input type="text" class="form-control" placeholder="Digite seu nome" name="nome">
+            <input type="text" class="form-control" placeholder="Digite o nome do cliente" name="nome">
         </div>
+
+        <div class="mb-3 mt-3">
+            <label for="cpf" id="cpf" class="form-label">CPF:</label>
+            <input type="text" class="form-control" placeholder="Digite o cpf do cliente" name="cpf">
+        </div>
+
         <div class="mb-3 mt-3">
             <label for="email" id="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" placeholder="Digite seu email" name="email">
-        </div>
-        <div class="mb-3">
-            <label for="senha" class="form-label">Senha:</label>
-            <input type="password" id="senha" class="form-control" placeholder="Digite sua senha" name="senha">
+            <input type="email" class="form-control" placeholder="Digite o email do cliente" name="email">
         </div>
 
         <button type="submit" class="btn btn-primary">Cadastrar</button>

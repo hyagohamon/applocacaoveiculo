@@ -15,38 +15,39 @@
 
 
 
-    <h3>Locações</h3>
-    <a href="/locacoes" class="btn btn-success mb-2 ">Nova</a>
+    <h3>Carros</h3>
+    <a href="/carros" class="btn btn-success mb-2 ">Novo</a>
 
     <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
             <th>Código</th>
-            <th>Descrição</th>
-            <th>Data</th>
-            <th>Web</th>
-            <th>Cliente</th>
-            <th>Veiculo</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Valor</th>
+            <th>Portas</th>
+            <th>Cavalos</th>
+            <th>Velocidade máxima</th>
             <th>Ações</th>
 
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="locacao" items="${listagem}">
-
+        <c:forEach var="carro" items="${listagem}">
             <tr>
-                <td>${locacao.codigo}</td>
-                <td>${locacao.descricao}</td>
-                <td>${locacao.data}</td>
-                <td>${locacao.web}</td>
-                <td>${locacao.cliente.nome}</td>
-                <td>${locacao.veiculos.size()}</td>
-                <td><a href="/locacoes/${locacao.codigo}/excluir" class="btn btn-danger">Excluir</a></td>
-
+                <td>${carro.codigo}</td>
+                <td>${carro.marca}</td>
+                <td>${carro.modelo}</td>
+                <td>${carro.valor}</td>
+                <td>${carro.qntdPortas}</td>
+                <td>${carro.qntdCavalos}</td>
+                <td>${carro.velocidadeMaxima}</td>
+                <td><a href="/carros/${carro.codigo}/excluir" class="btn btn-danger">Excluir</a></td>
 
             </tr>
-
         </c:forEach>
+
+
         </tbody>
     </table>
 

@@ -13,16 +13,18 @@
 
 <div class="container mt-3">
 
-    <p>Projeto de Locação de Veiculos</p>
 
 
-    <h3>Classe: Carro</h3>
+    <h3>Carros</h3>
+    <a href="/carros" class="btn btn-success mb-2 ">Novo</a>
+
     <table class="table table-striped table-hover table-bordered">
         <thead>
         <tr>
             <th>Código</th>
             <th>Marca</th>
             <th>Modelo</th>
+            <th>Ano</th>
             <th>Valor</th>
             <th>Portas</th>
             <th>Cavalos</th>
@@ -37,11 +39,12 @@
                 <td>${carro.codigo}</td>
                 <td>${carro.marca}</td>
                 <td>${carro.modelo}</td>
+                <td>${carro.ano}</td>
                 <td>${carro.valor}</td>
                 <td>${carro.qntdPortas}</td>
                 <td>${carro.qntdCavalos}</td>
                 <td>${carro.velocidadeMaxima}</td>
-                <td><a href="/carros/${carro.codigo}/excluir">Excluir</a></td>
+                <td><a href="/carros/${carro.codigo}/excluir" class="btn btn-danger">Excluir</a></td>
 
             </tr>
         </c:forEach>

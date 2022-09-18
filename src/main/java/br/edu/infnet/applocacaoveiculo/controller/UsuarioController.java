@@ -21,6 +21,11 @@ public class UsuarioController {
         return "/usuarios/lista";
     }
 
+    @GetMapping("/usuarios")
+    public String novo() {
+        return "/usuarios/cadastro";
+    }
+
     @GetMapping("/usuario")
     public String cadastro() {
         return "usuarios/cadastro";
@@ -29,7 +34,7 @@ public class UsuarioController {
     @PostMapping("/usuarios/incluir")
     public String inclusao(Usuario usuario) {
         usuarioService.incluir(usuario);
-        return "redirect:/";
+        return "redirect:/usuarios/lista";
     }
 
     @GetMapping("/usuarios/{email}/excluir")

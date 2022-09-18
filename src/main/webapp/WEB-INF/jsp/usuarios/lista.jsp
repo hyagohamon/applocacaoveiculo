@@ -13,10 +13,11 @@
 
 <div class="container mt-3">
 
-    <p>Projeto de Locação de Veiculos</p>
 
 
-    <h3>Classe: Usuários</h3>
+    <h3>Usuários</h3>
+    <a href="/usuarios" class="btn btn-success mb-2 ">Novo</a>
+
     <table class="table table-striped table-hover table-bordered">
         <thead>
 
@@ -32,7 +33,7 @@
                 <td>${usuario.nome}</td>
                 <td>${usuario.senha}</td>
                 <td>${usuario.email}</td>
-                <td><a href="/usuarios/${usuario.email}/excluir">Excluir</a></td>
+                <td><a href="/usuarios/${usuario.email}/excluir" class="btn btn-danger">Excluir</a></td>
 
             </tr>
         </c:forEach>

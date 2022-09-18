@@ -8,6 +8,8 @@ import br.edu.infnet.applocacaoveiculo.model.domain.Veiculo;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.CPFInvalidoException;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.ClienteNuloException;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.LocacaoSemVeiculoException;
+import br.edu.infnet.applocacaoveiculo.model.service.ClienteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -21,13 +23,14 @@ import java.util.Set;
 @Component
 @Order(1)
 public class ClienteTest implements CommandLineRunner {
-
+    @Autowired
+    ClienteService clienteService;
     @Override
     public void run(String... args) {
 
         try {
             Cliente c1 = new Cliente("Mariana Cutrim Alencar", "05027864349", "99985453299");
-            ClienteController.incluir(c1);
+            clienteService.incluir(c1);
 
         } catch (Exception e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -36,7 +39,7 @@ public class ClienteTest implements CommandLineRunner {
 
         try {
             Cliente c2 = new Cliente("Italo Jose de Aquino", "01235345875", "99985256398");
-            ClienteController.incluir(c2);
+            clienteService.incluir(c2);
 
         } catch (Exception e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -44,7 +47,7 @@ public class ClienteTest implements CommandLineRunner {
 
         try {
             Cliente c3 = new Cliente("Kassia Hellen Silva", "12785445632", "99984453241");
-            ClienteController.incluir(c3);
+            clienteService.incluir(c3);
 
         } catch (Exception e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -53,7 +56,7 @@ public class ClienteTest implements CommandLineRunner {
 
         try {
             Cliente c4 = new Cliente("Joao Alcadieno", "", "87885421");
-            ClienteController.incluir(c4);
+            clienteService.incluir(c4);
 
         } catch (Exception e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -62,7 +65,7 @@ public class ClienteTest implements CommandLineRunner {
 
         try {
             Cliente c5 = new Cliente("Maria Clara", null, "99984453241");
-            ClienteController.incluir(c5);
+            clienteService.incluir(c5);
 
         } catch (Exception e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -82,7 +85,7 @@ public class ClienteTest implements CommandLineRunner {
                     String[] campos = linha.split(";");
                     try {
                         Cliente c5 = new Cliente(campos[0], campos[1], campos[2]);
-                        ClienteController.incluir(c5);
+                        clienteService.incluir(c5);
 
                     } catch (Exception e) {
                         System.out.println("[ERRO]" + e.getMessage());

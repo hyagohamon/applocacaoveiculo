@@ -1,10 +1,9 @@
 package br.edu.infnet.applocacaoveiculo;
 
-import br.edu.infnet.applocacaoveiculo.controller.CarroController;
-import br.edu.infnet.applocacaoveiculo.controller.ClienteController;
 import br.edu.infnet.applocacaoveiculo.model.domain.Carro;
-import br.edu.infnet.applocacaoveiculo.model.domain.Cliente;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
+import br.edu.infnet.applocacaoveiculo.model.service.CarroService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -18,6 +17,8 @@ import java.time.LocalDate;
 @Order(2)
 public class CarroTest implements CommandLineRunner {
 
+    @Autowired
+    private CarroService carroService;
 
     @Override
     public void run(String... args) {
@@ -27,31 +28,30 @@ public class CarroTest implements CommandLineRunner {
             Carro c1 = new Carro();
             c1.setMarca("FORD");
             c1.setModelo("KA");
-            c1.setAno(LocalDate.of(2010, 1, 1));
+            c1.setAno("2020");
             c1.setValor(65000.00f);
             c1.setQntdPortas(2);
             c1.setQntdCavalos(136);
             c1.setVelocidadeMaxima(200);
             System.out.println("Calculo locação:" + c1.valorLocacao());
-            CarroController.incluir(c1);
+            carroService.incluir(c1);
 
         } catch (ValorInvalidoException e) {
             System.out.println("[ERRO]" + e.getMessage());
         }
 
 
-
         try {
             Carro c2 = new Carro();
             c2.setMarca("HYUNDAI");
             c2.setModelo("HB20S");
-            c2.setAno(LocalDate.of(2015, 1, 1));
+            c2.setAno("2015");
             c2.setValor(70000.00f);
             c2.setQntdPortas(4);
             c2.setQntdCavalos(130);
             c2.setVelocidadeMaxima(280);
             System.out.println("Calculo locação:" + c2.valorLocacao());
-            CarroController.incluir(c2);
+            carroService.incluir(c2);
 
         } catch (ValorInvalidoException e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -62,13 +62,13 @@ public class CarroTest implements CommandLineRunner {
             Carro c3 = new Carro();
             c3.setMarca("FIAT");
             c3.setModelo("ARGO");
-            c3.setAno(LocalDate.of(2017, 1, 1));
+            c3.setAno("2017");
             c3.setValor(67900.90f);
             c3.setQntdPortas(4);
             c3.setQntdCavalos(139);
             c3.setVelocidadeMaxima(300);
             System.out.println("Calculo locação:" + c3.valorLocacao());
-            CarroController.incluir(c3);
+            carroService.incluir(c3);
 
         } catch (ValorInvalidoException e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -79,13 +79,13 @@ public class CarroTest implements CommandLineRunner {
             Carro c4 = new Carro();
             c4.setMarca("Honda");
             c4.setModelo("City");
-            c4.setAno(LocalDate.of(2017, 1, 1));
+            c4.setAno("2016");
             c4.setValor(0);
             c4.setQntdPortas(4);
             c4.setQntdCavalos(200);
             c4.setVelocidadeMaxima(325);
             System.out.println("Calculo locação:" + c4.valorLocacao());
-            CarroController.incluir(c4);
+            carroService.incluir(c4);
 
         } catch (ValorInvalidoException e) {
             System.out.println("[ERRO]" + e.getMessage());
@@ -107,13 +107,13 @@ public class CarroTest implements CommandLineRunner {
                         Carro c4 = new Carro();
                         c4.setMarca(campos[0]);
                         c4.setModelo(campos[1]);
-                        c4.setAno(LocalDate.parse(campos[2]));
+                        c4.setAno(campos[2]);
                         c4.setValor(Float.parseFloat(campos[3]));
                         c4.setQntdPortas(Integer.parseInt(campos[4]));
                         c4.setQntdCavalos(Integer.parseInt(campos[5]));
                         c4.setVelocidadeMaxima(Integer.parseInt(campos[6]));
                         System.out.println("Calculo locação:" + c4.valorLocacao());
-                        CarroController.incluir(c4);
+                        carroService.incluir(c4);
 
                     } catch (ValorInvalidoException e) {
                         System.out.println("[ERRO]" + e.getMessage());
@@ -132,7 +132,6 @@ public class CarroTest implements CommandLineRunner {
         } finally {
             System.out.println("acabou");
         }
-
 
 
     }

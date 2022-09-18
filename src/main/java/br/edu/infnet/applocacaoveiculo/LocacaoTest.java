@@ -24,7 +24,7 @@ public class LocacaoTest implements CommandLineRunner {
 
         Moto m1 = new Moto();
         m1.setCodigo(1);
-        m1.setAno(LocalDate.of(2018, 01, 01));
+        m1.setAno("2000");
         m1.setMarca("Honda");
         m1.setModelo("Hornet");
         m1.setValor(47000.00f);
@@ -36,7 +36,7 @@ public class LocacaoTest implements CommandLineRunner {
         ca1.setCodigo(1);
         ca1.setMarca("FORD");
         ca1.setModelo("KA");
-        ca1.setAno(LocalDate.of(2010, 1, 1));
+        ca1.setAno("2017");
         ca1.setValor(25000.00f);
         ca1.setQntdPortas(2);
         ca1.setQntdCavalos(136);
@@ -45,7 +45,7 @@ public class LocacaoTest implements CommandLineRunner {
         Barco b1 = new Barco();
         b1.setCodigo(1);
         b1.setMarca("MetalGlass");
-        b1.setAno(LocalDate.of(2022, 01, 01));
+        b1.setAno("2018");
         b1.setModelo("M1");
         b1.setQtdDeck(3);
         b1.setCategoria("Passeio");
@@ -104,28 +104,6 @@ public class LocacaoTest implements CommandLineRunner {
             System.out.println("Error " + e.getMessage());
         }
 
-
-//        try {
-//            Set<Veiculo> listaLocacao5 = new HashSet<Veiculo>();
-//            Cliente c5 = new Cliente("Paloma Oliveira", "2525242423", "0202030501");
-//            Locacao l5 = new Locacao(null, listaLocacao5);
-//            l5.setDescricao("Locação de Barco");
-//            l5.setWeb(true);
-//            LocacaoController.incluir(l5);
-//        } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {
-//            System.out.println("Error " + e.getMessage());
-//        }
-//
-//        try {
-//            Set<Veiculo> listaLocacao6 = null;
-//            Cliente c6 = new Cliente("Jessica Oliveira", "1810181", "3636353535");
-//            Locacao l6 = new Locacao(c6, listaLocacao6);
-//            l6.setDescricao("Locação de Barco");
-//            l6.setWeb(true);
-//            LocacaoController.incluir(l6);
-//        } catch (CPFInvalidoException | ClienteNuloException | LocacaoSemVeiculoException e) {
-//            System.out.println("Error " + e.getMessage());
-//        }
 
         String diretorio = "C:/arquivos/";
         String arquivo = "locacoes.txt";
