@@ -1,7 +1,6 @@
 package br.edu.infnet.applocacaoveiculo.model.service;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Barco;
-import br.edu.infnet.applocacaoveiculo.model.domain.Carro;
 import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.stereotype.Service;
 

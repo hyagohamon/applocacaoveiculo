@@ -88,7 +88,7 @@ public class MotoTest implements CommandLineRunner {
         }
 
         String diretorio = "C:/arquivos/";
-        String arquivo = "motos.txt";
+        String arquivo = "veiculos.txt";
 
         try {
             try {
@@ -98,19 +98,21 @@ public class MotoTest implements CommandLineRunner {
                 String linha = bufferedReader.readLine();
                 while (linha != null) {
                     String[] campos = linha.split(";");
-                    try {
-                        Moto m4 = new Moto();
-                        m4.setAno(campos[0]);
-                        m4.setMarca(campos[1]);
-                        m4.setModelo(campos[2]);
-                        m4.setValor(Float.parseFloat(campos[3]));
-                        m4.setVelocidadeMaxima(Integer.parseInt(campos[4]));
-                        m4.setQntdCilindradas(Integer.parseInt(campos[5]));
-                        m4.setQntdMarchas(Integer.parseInt(campos[6]));
-                        System.out.println(m4.valorLocacao());
-                        motoService.incluir(m4);
-                    } catch (CilindradaInvalidaException e) {
-                        System.out.println("[ERRO]" + e.getMessage());
+                    if ("M".equalsIgnoreCase(campos[0])) {
+                        try {
+                            Moto m4 = new Moto();
+                            m4.setAno(campos[1]);
+                            m4.setMarca(campos[2]);
+                            m4.setModelo(campos[3]);
+                            m4.setValor(Float.parseFloat(campos[4]));
+                            m4.setVelocidadeMaxima(Integer.parseInt(campos[5]));
+                            m4.setQntdCilindradas(Integer.parseInt(campos[6]));
+                            m4.setQntdMarchas(Integer.parseInt(campos[7]));
+                            System.out.println(m4.valorLocacao());
+                            motoService.incluir(m4);
+                        } catch (CilindradaInvalidaException e) {
+                            System.out.println("[ERRO]" + e.getMessage());
+                        }
                     }
 
 

@@ -22,12 +22,7 @@ public class Locacao implements IPrinter {
             throw new ClienteNuloException("O cliente não pode ser nulo");
         }
 
-        if (veiculos == null) {
-            throw new LocacaoSemVeiculoException("A lista de veiculos nao pode ser nula");
-        }
-        if (veiculos.size() < 1) {
-            throw new LocacaoSemVeiculoException("A locação deve conter pelo menos um veiculo");
-        }
+//
 
 
         this.veiculos = veiculos;

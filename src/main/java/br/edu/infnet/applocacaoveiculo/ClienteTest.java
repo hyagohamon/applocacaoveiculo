@@ -1,13 +1,6 @@
 package br.edu.infnet.applocacaoveiculo;
 
-import br.edu.infnet.applocacaoveiculo.controller.ClienteController;
-import br.edu.infnet.applocacaoveiculo.controller.LocacaoController;
 import br.edu.infnet.applocacaoveiculo.model.domain.Cliente;
-import br.edu.infnet.applocacaoveiculo.model.domain.Locacao;
-import br.edu.infnet.applocacaoveiculo.model.domain.Veiculo;
-import br.edu.infnet.applocacaoveiculo.model.exceptions.CPFInvalidoException;
-import br.edu.infnet.applocacaoveiculo.model.exceptions.ClienteNuloException;
-import br.edu.infnet.applocacaoveiculo.model.exceptions.LocacaoSemVeiculoException;
 import br.edu.infnet.applocacaoveiculo.model.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -17,8 +10,6 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
 
 @Component
 @Order(1)

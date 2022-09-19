@@ -1,0 +1,9 @@
+B;LeveFort;2019;LV88;Passeio;4;false;175000
+B;LeveFort;2018;LV778;Passeio;4;false;155000
+B;LeveFort;2017;LV12;Passeio;4;true;125000
+M;2020;Honda; Bros;15000;180;160;6
+M;2020;Suzuki; Suzuki;25000;220;300;6
+M;2020;Bmw; B15;30000;300;300;6
+C;Honda;Civic;2022;70000;4;220;250
+C;Honda;City;2020;75000;4;250;300
+C;Toyota;Corolla C;2021;65000;2;250;270

@@ -1,7 +1,6 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.model.exceptions.CilindradaInvalidaException;
-import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
 
 public class Moto extends Veiculo {
 

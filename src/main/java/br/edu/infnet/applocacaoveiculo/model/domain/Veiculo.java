@@ -5,8 +5,6 @@ import br.edu.infnet.applocacaoveiculo.model.exceptions.CilindradaInvalidaExcept
 import br.edu.infnet.applocacaoveiculo.model.exceptions.QntdDeckInvalidaException;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
 
-import java.time.LocalDate;
-
 public abstract class Veiculo implements IPrinter {
 
     private Integer codigo;

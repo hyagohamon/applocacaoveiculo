@@ -16,7 +16,7 @@ public class UsuarioService {
     public void incluir(Usuario usuario) {
         usuarioMap.put(usuario.getEmail(), usuario);
 
-        AppImpressao.relatorio("Usu·rio " + usuario.getNome() + " cadastrado com sucesso", usuario);
+        AppImpressao.relatorio("Usu√°rio " + usuario.getNome() + " cadastrado com sucesso", usuario);
     }
 
     public void excluir(String email) {

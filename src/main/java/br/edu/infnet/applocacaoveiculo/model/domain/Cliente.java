@@ -3,8 +3,13 @@ package br.edu.infnet.applocacaoveiculo.model.domain;
 import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.CPFInvalidoException;
 
-public class Cliente implements IPrinter {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "tb_cliente")
+public class Cliente implements IPrinter {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
     private String nome;
     private String cpf;
@@ -21,6 +26,10 @@ public class Cliente implements IPrinter {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
+    }
+
+    public Cliente() {
+
     }
 
     @Override
@@ -59,6 +68,7 @@ public class Cliente implements IPrinter {
     }
 
     public String getEmail() {
+
         return email;
     }
 

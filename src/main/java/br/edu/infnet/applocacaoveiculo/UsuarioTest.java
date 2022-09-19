@@ -52,7 +52,7 @@ public class UsuarioTest implements ApplicationRunner {
                 System.out.println(e.getMessage());
             }
         } finally {
-            System.out.println("inserÁ„o via txt de usu·rios concluÌda com sucesso");
+            System.out.println("inser√ß√£o via txt de usu√°rios conclu√≠da com sucesso");
         }
     }
 }

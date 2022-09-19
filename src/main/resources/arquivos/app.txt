@@ -26,7 +26,7 @@ A;descrição;double;descrição da locação
 A;data;double;momento em que a locação foi feita
 A;web;double;se a locação foi via web ou não
 C;Veículo
-A;marca;String;nome do carro
-A;modelo;String;modelo do carro
-A;ano;LocalDate;ano do carro
-A;valor;double;valor do carro
+A;marca;String;nome do veículo
+A;modelo;String;modelo veículo
+A;ano;LocalDate;ano do veículo
+A;valor;double;valor do veículo

@@ -1,7 +1,6 @@
 package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.interfaces.IPrinter;
-import br.edu.infnet.applocacaoveiculo.model.exceptions.CPFInvalidoException;
 
 public class Usuario implements IPrinter {
 
@@ -17,7 +16,7 @@ public class Usuario implements IPrinter {
 
     @Override
     public String toString() {
-        return "Usu·rio{" + "nome='" + nome + '\'' + ", senha='" + senha + '\'' + ", email='" + email + '\'' + '}';
+        return "Usu√°rio{" + "nome='" + nome + '\'' + ", senha='" + senha + '\'' + ", email='" + email + '\'' + '}';
     }
 
     @Override
