@@ -13,7 +13,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 @Component
-@Order(2)
+@Order(4)
 public class CarroTest implements CommandLineRunner {
 
     @Autowired

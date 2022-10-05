@@ -5,8 +5,15 @@ import br.edu.infnet.applocacaoveiculo.model.exceptions.CilindradaInvalidaExcept
 import br.edu.infnet.applocacaoveiculo.model.exceptions.QntdDeckInvalidaException;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tb_veiculo")
+@Inheritance(strategy =InheritanceType.JOINED )
 public abstract class Veiculo implements IPrinter {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
     private String marca;
     private String modelo;
@@ -15,7 +22,7 @@ public abstract class Veiculo implements IPrinter {
 
     @Override
     public String toString() {
-        return "Veiculo{" + "marca:" + marca + ", modelo:'" + modelo + ", ano:" + ano + ", valor:" + valor  + '}';
+        return "Veiculo{" + "marca:" + marca + ", modelo:'" + modelo + ", ano:" + ano + ", valor:" + valor + '}';
     }
 
     public abstract double valorLocacao() throws ValorInvalidoException, CilindradaInvalidaException, QntdDeckInvalidaException;
@@ -42,6 +49,7 @@ public abstract class Veiculo implements IPrinter {
     }
 
     public void setAno(String ano) {
+
         this.ano = ano;
     }
 

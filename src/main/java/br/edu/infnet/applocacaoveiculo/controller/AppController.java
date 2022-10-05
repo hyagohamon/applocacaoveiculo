@@ -42,7 +42,7 @@ public class AppController {
 
         if (usuario != null) {
 
-            model.addAttribute("loggedUser", usuario.getNome());
+            model.addAttribute("loggedUser", usuario);
             return "redirect:/";
 
         } else {

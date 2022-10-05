@@ -25,6 +25,7 @@
             <th>Nome</th>
             <th>CPF</th>
             <th>E-mail</th>
+            <th>Cadastrado por</th>
             <th>Ações</th>
 
         </tr>
@@ -37,6 +38,7 @@
                 <td>${cliente.nome}</td>
                 <td>${cliente.cpf}</td>
                 <td>${cliente.email}</td>
+                <td>${cliente.usuario.nome}</td>
                 <td><a href="/clientes/${cliente.codigo}/excluir"  class="btn btn-danger">Excluir</a></td>
 
 

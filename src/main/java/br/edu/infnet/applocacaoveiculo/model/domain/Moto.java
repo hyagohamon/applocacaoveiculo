@@ -2,6 +2,11 @@ package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.model.exceptions.CilindradaInvalidaException;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_moto")
 public class Moto extends Veiculo {
 
     private int qntdCilindradas;

@@ -2,6 +2,11 @@ package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.model.exceptions.QntdDeckInvalidaException;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_barco")
 public class Barco extends Veiculo {
     private boolean motor;
     private int qtdDeck;

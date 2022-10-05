@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Set;
 
 @Component
-@Order(5)
+@Order(6)
 public class LocacaoTest implements CommandLineRunner {
 
     @Autowired

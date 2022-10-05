@@ -1,32 +1,38 @@
 package br.edu.infnet.applocacaoveiculo.model.service;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Cliente;
+import br.edu.infnet.applocacaoveiculo.model.domain.Usuario;
+import br.edu.infnet.applocacaoveiculo.model.repositories.ClienteRepository;
 import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class ClienteService {
 
-    private static final Map<Integer, Cliente> clientes = new HashMap<Integer, Cliente>();
-    private static Integer id = 1;
+    @Autowired
+    private ClienteRepository clienteRepository;
+
 
     public void incluir(Cliente cliente) {
-        cliente.setCodigo(id++);
-        clientes.put(cliente.getCodigo(), cliente);
+        clienteRepository.save(cliente);
+
         AppImpressao.relatorio("Cliente " + cliente.getNome() + " cadastrado com sucesso", cliente);
 
     }
 
     public Collection<Cliente> obterLista() {
-        return clientes.values();
+        return (Collection<Cliente>) clienteRepository.findAll();
+    }
+
+    public Collection<Cliente> obterLista(Usuario usuario) {
+        return (Collection<Cliente>) clienteRepository.obterLista(usuario.getId());
     }
 
 
     public void excluir(Integer codigo) {
-        clientes.remove(codigo);
+        clienteRepository.deleteById(codigo);
     }
 }

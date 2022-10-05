@@ -15,6 +15,10 @@ public class Cliente implements IPrinter {
     private String cpf;
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
 
     public Cliente(String nome, String cpf, String email) throws CPFInvalidoException {
         if (cpf == null) {
@@ -74,5 +78,13 @@ public class Cliente implements IPrinter {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

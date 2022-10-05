@@ -2,6 +2,11 @@ package br.edu.infnet.applocacaoveiculo.model.domain;
 
 import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_carro")
 public class Carro extends Veiculo {
 
     private int qntdPortas;
