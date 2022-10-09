@@ -1,0 +1,12 @@
+L;Locacao 1;true;Paloma Oliveira Silva;05027864349;99985453298
+B;LeveFort;2019;LV88;Passeio;4;false;175000
+C;Honda;Modelo A;2022;70000;4;220;250
+L;Locacao 2;true;Maria Clara;05027864344;99985853798
+C;Toyota;Corolla;2022;70000;4;220;250
+C;Honda;City;2020;75000;4;250;300
+C;Honda;Accord;2021;65000;2;250;270
+L;Locacao 3;false;Hyago Hamon Sousa de Aquino;05027864345;99985453200
+C;Honda;Scooter;2002;40000;2;250;270
+M;2020;Honda; Bros;15000;180;160;6
+M;2020;Suzuki; Suzuki;25000;220;300;6
+M;2020;Bmw; B15;30000;300;300;6

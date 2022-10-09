@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo.model.service;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Moto;
+import br.edu.infnet.applocacaoveiculo.model.domain.Usuario;
 import br.edu.infnet.applocacaoveiculo.model.repositories.MotoRepository;
 import br.edu.infnet.applocacaoveiculo.model.test.AppImpressao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class MotoService {
 
     public Collection<Moto> obterLista() {
         return (Collection<Moto>) motoRepository.findAll();
+
+    }
+
+    public Collection<Moto> obterLista(Usuario usuario) {
+        return motoRepository.findAll(usuario.getId());
 
     }
 

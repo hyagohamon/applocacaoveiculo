@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 
@@ -37,15 +38,17 @@ public class AppController {
     }
 
     @PostMapping(value = "/login")
-    public String autenticaLogin(Model model, @RequestParam String email, @RequestParam String password) {
+    public String autenticaLogin(Model model, @RequestParam String email, @RequestParam String password, RedirectAttributes redirectAttributes) {
         Usuario usuario = usuarioService.validar(email, password);
 
         if (usuario != null) {
-
             model.addAttribute("loggedUser", usuario);
+
             return "redirect:/";
 
         } else {
+            model.addAttribute("msg", "E-mail ou senha inválidos");
+
             return login();
         }
     }

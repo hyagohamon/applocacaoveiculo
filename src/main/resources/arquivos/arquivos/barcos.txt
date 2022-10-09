@@ -1,0 +1,3 @@
+LeveFort;2019;LV88;Passeio;4;false;175000
+LeveFort;2018;LV778;Passeio;4;false;155000
+LeveFort;2017;LV12;Passeio;4;true;125000

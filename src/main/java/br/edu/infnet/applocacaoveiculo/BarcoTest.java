@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Barco;
+import br.edu.infnet.applocacaoveiculo.model.domain.Usuario;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.QntdDeckInvalidaException;
 import br.edu.infnet.applocacaoveiculo.model.service.BarcoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,8 @@ public class BarcoTest implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-
+        Usuario usuario = new Usuario();
+        usuario.setId(1);
 
         try {
             Barco b1 = new Barco();
@@ -32,6 +34,7 @@ public class BarcoTest implements CommandLineRunner {
             b1.setCategoria("Passeio");
             b1.setMotor(true);
             b1.setValor(150000);
+            b1.setUsuario(usuario);
             System.out.println("Calculo locação:" + b1.valorLocacao());
             barcoService.incluir(b1);
 
@@ -49,6 +52,8 @@ public class BarcoTest implements CommandLineRunner {
             b2.setCategoria("Pesca");
             b2.setMotor(true);
             b2.setValor(150000);
+            b2.setUsuario(usuario);
+
             System.out.println("Calculo locação:" + b2.valorLocacao());
             barcoService.incluir(b2);
 
@@ -66,6 +71,8 @@ public class BarcoTest implements CommandLineRunner {
             b3.setQtdDeck(4);
             b3.setMotor(false);
             b3.setValor(1750000);
+            b3.setUsuario(usuario);
+
             System.out.println("Calculo locação:" + b3.valorLocacao());
             barcoService.incluir(b3);
 
@@ -83,6 +90,8 @@ public class BarcoTest implements CommandLineRunner {
             b4.setQtdDeck(20);
             b4.setMotor(false);
             b4.setValor(190000);
+            b4.setUsuario(usuario);
+
             System.out.println("Calculo locação:" + b4.valorLocacao());
             barcoService.incluir(b4);
 
@@ -112,6 +121,7 @@ public class BarcoTest implements CommandLineRunner {
                             b4.setQtdDeck(Integer.parseInt(campos[5]));
                             b4.setMotor(Boolean.parseBoolean(campos[6]));
                             b4.setValor(Float.parseFloat(campos[7]));
+                            b4.setUsuario(usuario);
                             System.out.println("Calculo locação:" + b4.valorLocacao());
                             barcoService.incluir(b4);
 

@@ -12,7 +12,7 @@ public class AppService {
 
     public void incluir(Projeto projeto) {
         this.projeto = projeto;
-        AppImpressao.relatorio("Exibição do projeto" + projeto.getNome() + "realizada com sucesso", projeto);
+        AppImpressao.relatorio("ExibiÃ§Ã£o do projeto" + projeto.getNome() + "realizada com sucesso", projeto);
     }
 
     public Projeto obterProjeto(){

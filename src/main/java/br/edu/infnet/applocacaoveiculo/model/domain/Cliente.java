@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Cliente implements IPrinter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer codigo;
+    private Integer id;
     private String nome;
     private String cpf;
     private String email;
@@ -47,12 +47,12 @@ public class Cliente implements IPrinter {
 
     }
 
-    public Integer getCodigo() {
-        return codigo;
+    public Integer getId() {
+        return id;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {

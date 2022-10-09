@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +21,8 @@
         </div>
 
         <div class="mb-3 mt-3">
-            <label for="velocidadeMaxima" id="velocidadeMaxima" class="form-label">Velocidade m·xima:</label>
-            <input type="text" class="form-control" placeholder="Digite a velocidade m·xima da moto" name="velocidadeMaxima">
+            <label for="velocidadeMaxima" id="velocidadeMaxima" class="form-label">Velocidade m√°xima:</label>
+            <input type="text" class="form-control" placeholder="Digite a velocidade m√°xima da moto" name="velocidadeMaxima">
         </div>
 
         <div class="mb-3 mt-3">

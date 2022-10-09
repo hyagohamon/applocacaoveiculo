@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ClienteController {
@@ -24,16 +25,34 @@ public class ClienteController {
     }
 
     @PostMapping("/clientes/incluir")
-    public String incluir(Cliente cliente, @SessionAttribute("loggedUser")Usuario usuario) {
-        cliente.setUsuario(usuario);
-        clienteService.incluir(cliente);
+    public String incluir(Cliente cliente, @SessionAttribute("loggedUser")Usuario usuario,RedirectAttributes redirectAttributes) {
+        try{
+            cliente.setUsuario(usuario);
+            clienteService.incluir(cliente);
+            redirectAttributes.addFlashAttribute("msg","Cliente cadastrado com sucesso");
+
+        }
+        catch (Exception e){
+            redirectAttributes.addFlashAttribute("msg","Cliente não pode ser cadastrado");
+            return "redirect:/clientes/lista";
+
+        }
+
 
         return "redirect:/clientes/lista";
     }
 
     @GetMapping("/clientes/{codigo}/excluir")
-    public String exlusao(@PathVariable Integer codigo) {
-        clienteService.excluir(codigo);
+    public String exlusao(@PathVariable Integer codigo, RedirectAttributes redirectAttributes) {
+        try{
+            clienteService.excluir(codigo);
+            redirectAttributes.addFlashAttribute("msg","Cliente excluído com sucesso");
+        }
+        catch (Exception e){
+            redirectAttributes.addFlashAttribute("msg","Cliente não pode ser excluído");
+            return "redirect:/clientes/lista";
+
+        }
         return "redirect:/clientes/lista";
     }
 

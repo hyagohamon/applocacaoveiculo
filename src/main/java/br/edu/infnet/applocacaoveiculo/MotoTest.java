@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Moto;
+import br.edu.infnet.applocacaoveiculo.model.domain.Usuario;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.CilindradaInvalidaException;
 import br.edu.infnet.applocacaoveiculo.model.service.MotoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class MotoTest implements CommandLineRunner {
     public void run(String... args) {
 
 
+        Usuario usuario = new Usuario();
+        usuario.setId(1);
+
         try {
             Moto m1 = new Moto();
             m1.setAno("2018");
@@ -32,6 +36,7 @@ public class MotoTest implements CommandLineRunner {
             m1.setVelocidadeMaxima(350);
             m1.setQntdCilindradas(600);
             m1.setQntdMarchas(5);
+            m1.setUsuario(usuario);
             System.out.println(m1.valorLocacao());
             motoService.incluir(m1);
 
@@ -49,6 +54,8 @@ public class MotoTest implements CommandLineRunner {
             m2.setVelocidadeMaxima(299);
             m2.setQntdCilindradas(300);
             m2.setQntdMarchas(6);
+            m2.setUsuario(usuario);
+
             System.out.println(m2.valorLocacao());
             motoService.incluir(m2);
 
@@ -66,6 +73,8 @@ public class MotoTest implements CommandLineRunner {
             m3.setVelocidadeMaxima(350);
             m3.setQntdCilindradas(400);
             m3.setQntdMarchas(6);
+            m3.setUsuario(usuario);
+
             System.out.println(m3.valorLocacao());
             motoService.incluir(m3);
         } catch (CilindradaInvalidaException e) {
@@ -81,6 +90,8 @@ public class MotoTest implements CommandLineRunner {
             m4.setVelocidadeMaxima(350);
             m4.setQntdCilindradas(2000);
             m4.setQntdMarchas(6);
+            m4.setUsuario(usuario);
+
             System.out.println(m4.valorLocacao());
             motoService.incluir(m4);
         } catch (CilindradaInvalidaException e) {
@@ -108,6 +119,7 @@ public class MotoTest implements CommandLineRunner {
                             m4.setVelocidadeMaxima(Integer.parseInt(campos[5]));
                             m4.setQntdCilindradas(Integer.parseInt(campos[6]));
                             m4.setQntdMarchas(Integer.parseInt(campos[7]));
+                            m4.setUsuario(usuario);
                             System.out.println(m4.valorLocacao());
                             motoService.incluir(m4);
                         } catch (CilindradaInvalidaException e) {

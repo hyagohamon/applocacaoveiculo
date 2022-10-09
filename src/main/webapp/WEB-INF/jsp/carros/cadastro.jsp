@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,17 +17,17 @@
 
         <div class="mb-3 mt-3">
             <label for="qntdPortas" id="qntdPortas" class="form-label">Quantidade de Portas:</label>
-            <input type="text" class="form-control" placeholder="Digite a quantidade de portas do veÌculo" name="qntdPortas">
+            <input type="text" class="form-control" placeholder="Digite a quantidade de portas do ve√≠culo" name="qntdPortas">
         </div>
 
         <div class="mb-3 mt-3">
             <label for="qntdCavalos" id="qntdCavalos" class="form-label">Quantidade de cavalos:</label>
-            <input type="text" class="form-control" placeholder="Digite a quantiade de cavalos do veÌculo" name="qntdCavalos">
+            <input type="text" class="form-control" placeholder="Digite a quantiade de cavalos do ve√≠culo" name="qntdCavalos">
         </div>
 
         <div class="mb-3 mt-3">
-            <label for="velocidadeMaxima" id="velocidadeMaxima" class="form-label">Velocidade m·xima:</label>
-            <input type="text" class="form-control" placeholder="Digite a velocidade m·xima do veÌculo" name="velocidadeMaxima">
+            <label for="velocidadeMaxima" id="velocidadeMaxima" class="form-label">Velocidade m√°xima:</label>
+            <input type="text" class="form-control" placeholder="Digite a velocidade m√°xima do ve√≠culo" name="velocidadeMaxima">
         </div>
 
 

@@ -1,6 +1,7 @@
 package br.edu.infnet.applocacaoveiculo;
 
 import br.edu.infnet.applocacaoveiculo.model.domain.Carro;
+import br.edu.infnet.applocacaoveiculo.model.domain.Usuario;
 import br.edu.infnet.applocacaoveiculo.model.exceptions.ValorInvalidoException;
 import br.edu.infnet.applocacaoveiculo.model.service.CarroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,8 @@ public class CarroTest implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-
+            Usuario usuario = new Usuario();
+            usuario.setId(1);
 
         try {
             Carro c1 = new Carro();
@@ -32,6 +34,7 @@ public class CarroTest implements CommandLineRunner {
             c1.setQntdPortas(2);
             c1.setQntdCavalos(136);
             c1.setVelocidadeMaxima(200);
+            c1.setUsuario(usuario);
             System.out.println("Calculo locação:" + c1.valorLocacao());
             carroService.incluir(c1);
 
@@ -49,6 +52,8 @@ public class CarroTest implements CommandLineRunner {
             c2.setQntdPortas(4);
             c2.setQntdCavalos(130);
             c2.setVelocidadeMaxima(280);
+            c2.setUsuario(usuario);
+
             System.out.println("Calculo locação:" + c2.valorLocacao());
             carroService.incluir(c2);
 
@@ -66,6 +71,8 @@ public class CarroTest implements CommandLineRunner {
             c3.setQntdPortas(4);
             c3.setQntdCavalos(139);
             c3.setVelocidadeMaxima(300);
+            c3.setUsuario(usuario);
+
             System.out.println("Calculo locação:" + c3.valorLocacao());
             carroService.incluir(c3);
 
@@ -83,6 +90,8 @@ public class CarroTest implements CommandLineRunner {
             c4.setQntdPortas(4);
             c4.setQntdCavalos(200);
             c4.setVelocidadeMaxima(325);
+            c4.setUsuario(usuario);
+
             System.out.println("Calculo locação:" + c4.valorLocacao());
             carroService.incluir(c4);
 
@@ -112,6 +121,7 @@ public class CarroTest implements CommandLineRunner {
                             c4.setQntdPortas(Integer.parseInt(campos[5]));
                             c4.setQntdCavalos(Integer.parseInt(campos[6]));
                             c4.setVelocidadeMaxima(Integer.parseInt(campos[7]));
+                            c4.setUsuario(usuario);
                             System.out.println("Calculo locação:" + c4.valorLocacao());
                             carroService.incluir(c4);
 

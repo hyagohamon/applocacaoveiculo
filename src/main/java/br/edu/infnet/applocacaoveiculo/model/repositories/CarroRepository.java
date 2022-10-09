@@ -1,6 +1,6 @@
 package br.edu.infnet.applocacaoveiculo.model.repositories;
 
-import br.edu.infnet.applocacaoveiculo.model.domain.Moto;
+import br.edu.infnet.applocacaoveiculo.model.domain.Carro;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 
 @Repository
-public interface MotoRepository extends CrudRepository<Moto, Integer> {
+public interface CarroRepository extends CrudRepository<Carro, Integer> {
 
-    @Query("From Moto m where m.usuario.id = :idUsuario")
-    Collection<Moto> findAll(Integer idUsuario);
+    @Query("From Carro c where c.usuario.id = :idUsuario")
+    Collection<Carro> findAll(Integer idUsuario);
 }

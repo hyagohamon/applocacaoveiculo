@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,7 @@
 <body>
 <c:import url="../menu.jsp"></c:import>
 <div class="container mt-3">
-    <h3>Cadastro de usuário</h3>
+    <h3>Cadastro de usuÃ¡rio</h3>
     <form method="post" action="/usuarios/incluir">
 
         <div class="mb-3 mt-3">

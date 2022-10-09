@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UsuarioController {
@@ -32,15 +33,34 @@ public class UsuarioController {
     }
 
     @PostMapping("/usuarios/incluir")
-    public String inclusao(Usuario usuario) {
-        usuarioService.incluir(usuario);
+    public String inclusao(Usuario usuario, RedirectAttributes redirectAttributes) {
+
+        try {
+            usuarioService.incluir(usuario);
+            redirectAttributes.addFlashAttribute("msg", "Usuário cadastrado com sucesso");
+
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("msg", "Usuário não pode ser cadastrado");
+            return "redirect:/usuarios/lista";
+
+        }
         return "redirect:/usuarios/lista";
     }
 
-    @GetMapping("/usuarios/{email}/excluir")
-    public String exclusao(@PathVariable String email) {
-        usuarioService.excluir(email);
-        return "redirect:/usuarios/lista";
+    @GetMapping("/usuarios/{id}/excluir")
+    public String exclusao(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+        Usuario usuario = usuarioService.findById(id).get();
+        if (usuario.getLocacoes().size() > 0) {
+            redirectAttributes.addFlashAttribute("msg", "Usuário não pode ser excluído");
+            return "redirect:/usuarios/lista";
+
+        } else {
+            usuarioService.excluir(id);
+            redirectAttributes.addFlashAttribute("msg", "Usuário excluído com sucesso");
+
+            return "redirect:/usuarios/lista";
+        }
+
     }
 
 

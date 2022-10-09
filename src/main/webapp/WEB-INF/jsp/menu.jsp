@@ -12,6 +12,9 @@
 
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="/veiculos/lista">Veículos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/barcos/lista">Barcos</a>
                     </li>
                     <li class="nav-item">
@@ -35,7 +38,7 @@
 
         </div>
     </div>
-    <form class="d-flex flex-row-reverse">
+    <div class="d-flex flex-row-reverse" style="width: 250px">
         <c:if test="${empty loggedUser}">
 
             <a href="/usuario" class="btn btn-outline-primary me-2">Registrar</a>
@@ -43,8 +46,8 @@
         </c:if>
 
         <c:if test="${not empty loggedUser}">
-            <a href="/logout" class="btn-block btn-outline-danger me-2">Logout, ${loggedUser.nome}</a>
+            <a style="text-decoration: none" href="/logout" class="btn btn-block  btn-danger me-2">Logout, ${loggedUser.nome}</a>
         </c:if>
 
-    </form>
+    </div>
 </nav>

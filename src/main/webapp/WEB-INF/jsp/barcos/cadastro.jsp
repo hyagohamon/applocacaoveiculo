@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +22,7 @@
                 <label class="form-check-label" for="radio1"></label>
             </div>
             <div class="form-check">
-                <input type="radio" class="form-check-input" id="radio2" name="motor" value="false">Não
+                <input type="radio" class="form-check-input" id="radio2" name="motor" value="false">NÃ£o
                 <label class="form-check-label" for="radio2"></label>
             </div>
         </div>
